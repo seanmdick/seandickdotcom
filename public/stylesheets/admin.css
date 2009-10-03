@@ -1,0 +1,63 @@
+body #content {
+  width: 100%; }
+body input {
+  color: black; }
+body input.unselected {
+  color: #555555; }
+body input.error {
+  background-color: #E6ACAC; }
+body ul {
+  list-style: none;
+  font-size: 12px;
+  padding: 5px;
+  margin-left: 20px; }
+body li {
+  margin: 2px;
+  padding: 3px;
+  padding-left: 10px;
+  background-color: #AAA;
+  -moz-border-radius: 2% 0 0 2%;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px; }
+  body li .delete_btn {
+    float: right; }
+body .songs {
+  margin-top: 75px;
+  float: left;
+  width: 500px; }
+  body .songs .song {
+    padding: 5px;
+    margin: 5px;
+    background-color: #CCC;
+    width: 400px;
+    -moz-border-radius: 2% 0 0 2%;
+    -webkit-border-top-left-radius: 2%;
+    -webkit-border-bottom-left-radius: 2%; }
+  body .songs .song.new_version {
+    background-color: #EEE; }
+  body .songs .song.minimized {
+    height: 25px;
+    font-size: 10px;
+    line-height: 10px; }
+  body .songs .add_song {
+    clear: both;
+    float: left; }
+body .unattached {
+  padding: 10px;
+  float: left;
+  width: 500px; }
+  body .unattached h3 {
+    margin-left: 50px; }
+  body .unattached textarea {
+    width: 355px;
+    height: 200px; }
+  body .unattached .save {
+    float: right;
+    padding-right: 10px; }
+  body .unattached li {
+    clear: both;
+    background-color: #C0C0C0; }
+  body .unattached .tiny_thumb {
+    max-width: 75px;
+    float: left;
+    margin: 5px; }

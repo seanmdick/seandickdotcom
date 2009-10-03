@@ -1,28 +1,39 @@
-%link{ :rel => "stylesheet", :type => "text/css", :href => "stylesheets/global.css"}
-%script{ :src => "javascripts/jquery-1.3.2.min.js", :type => "text/javascript" }
+%title SeanDick.com - If you don't like it you probably work with me.
+!!!
+%link{ :rel => "stylesheet", :type => "text/css", :href => "/stylesheets/global.css"}
+%script{ :src => "/javascripts/jquery-1.3.2.min.js", :type => "text/javascript" }
 :javascript
   jQuery(function() {
     jQuery(".reveal").click(function() {
       jQuery(this).parent().find(".content").toggleClass("hidden");
     });
   });
+%script{ :src => "javascripts/audio-player.js", :type => "text/javascript" }
 
-.header
-  -@songs.each do |song|
-    .song
-      %h1.title= song.title
-      %span.created_at= song.created_at.strftime("Published %B %d, %Y")
-      .versions
-        - first_version = song.versions.shift
-        .first_version
-          %img{ :src => first_version.image_url, :class => "version_image" }
-          %span.description
-            = first_version.description
-          = find_and_preserve player(first_version.url)
-        -song.versions.each do |version|
-          .version
-            %span.reveal= version.created_at.strftime(" %b %d, %y")
-            .content.hidden
-              %img{ :src => version.image_url, :class => "thumbnail" }
-              %span.description= version.description
+.content
+  .songs
+    -@songs.sort.each do |song|
+      -unless song.versions.blank?
+        .song
+          %h1.title= song.title.titleize
+          %span.created_at= song.oldest_date.strftime("First recording %B %d, %Y")
+          .versions
+            - first_version = song.versions.shift
+            %div{:class => "version_#{first_version.id} first_version version"}
+              %a{:href => first_version.url}
+                %img{ :src => first_version.image_url, :class => "version_image" }
+              %span.description
+                = first_version.description
+              .player
+                = find_and_preserve player(first_version.url)
+            -song.versions.each do |version|
+              %div{:class => "version_#{version.id} version"}
+                %a.reveal= version.created_at.strftime(" %b %d, %y")
+                .content.hidden
+                  %img{ :src => version.image_url, :class => "thumbnail" }
+                  %p.description= version.description
+                  .player
+                    = find_and_preserve player(version.url, {:height => 18})
+  .sidebar
+    / %h3.browse find a song
 .footer

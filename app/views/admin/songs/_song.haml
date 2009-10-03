@@ -1,0 +1,13 @@
+.song{:song_id => @song.id}
+  %h3=@song.title
+  .versions
+    %a.expand_handle=pluralize(@song.versions.count, "version")
+    %ul.hidden.versions_list
+      -@song.versions.each do |version|
+        %li.version{:version_id => version.id}
+          %a.delete_btn{:title => "delete this song version"}
+            X
+          .description{:version_id => version.id, :full_text => version.description}
+            =truncate(version.description, 80)
+          .player
+            = find_and_preserve player(version.url)

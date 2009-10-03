@@ -1,27 +1,74 @@
 body {
+  background-color: Lavender;
   font-family: "Helvetica Neue","HelveticaNeueLT Std","MgOpen Moderna",Helvetica,Arial,sans-serif; }
+  body #pallette {
+    display: none; }
+  body h3 {
+    color: #6C7FB0; }
+  body a {
+    color: #4B6096;
+    cursor: pointer; }
+  body a:hover {
+    color: #6C7FB0; }
+  body img {
+    border: none;
+    max-width: 350px; }
+  body .expand_handle {
+    padding-left: 25px;
+    font-size: 12px; }
   body .hidden {
     display: none; }
-  body .song {
-    padding: 10px; }
-    body .song .created_at {
-      color: #333333;
-      font-size: 14px; }
-    body .song .title {
-      color: #F44040;
-      font-size: 42px;
-      line-height: 20px; }
-    body .song .versions .version_image,
-    body .song .versions .thumbnail {
-      float: left; }
-    body .song .versions .description {
+  body .content {
+    width: 950px;
+    margin: auto; }
+  body .songs {
+    margin-left: 100px;
+    width: 500px;
+    float: left; }
+    body .songs .song {
+      padding: 10px;
       float: left;
-      clear: both; }
-    body .song .versions .version {
-      float: left;
-      clear: left;
-      padding-left: 10px; }
-      body .song .versions .version .reveal {
-        font-size: 12px; }
-      body .song .versions .version .content {
+      clear: both;
+      background-color: lightGrey;
+      margin: 10px;
+      -moz-border-radius: 2%; }
+      body .songs .song .created_at {
+        color: #333333;
+        font-size: 14px;
         margin-left: 10px; }
+      body .songs .song .title {
+        color: #2E447C;
+        font-size: 42px;
+        line-height: 20px; }
+      body .songs .song .versions {
+        margin-left: 10px; }
+        body .songs .song .versions .version_image,
+        body .songs .song .versions .thumbnail {
+          float: left; }
+        body .songs .song .versions .description,
+        body .songs .song .versions .player {
+          padding-bottom: 10px;
+          float: left;
+          clear: both;
+          width: 400px;
+          text-indent: 15px; }
+        body .songs .song .versions .version {
+          float: left;
+          clear: left;
+          margin-left: 10px;
+          margin-bottom: 10px;
+          padding: 5px;
+          background-color: silver;
+          -moz-border-radius: 5px; }
+          body .songs .song .versions .version .reveal {
+            font-size: 12px; }
+          body .songs .song .versions .version .content {
+            margin-left: 10px;
+            float: left;
+            clear: both;
+            width: 400px;
+            text-indent: 15px; }
+  body .sidebar {
+    float: left;
+    width: 200px;
+    margin-top: 100px; }

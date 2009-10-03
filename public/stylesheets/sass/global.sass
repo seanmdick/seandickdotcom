@@ -1,29 +1,74 @@
 body
+  background-color: Lavender
+  #pallette
+    display: none
+  h3
+    color: #6C7FB0
+  a
+    color: #4B6096
+    cursor: pointer
+  a:hover
+    color: #6C7FB0
+  img
+    border: none
+    max-width: 350px
   font-family: "Helvetica Neue","HelveticaNeueLT Std","MgOpen Moderna",Helvetica,Arial,sans-serif
+  .expand_handle
+    padding-left: 25px
+    font-size: 12px
   .hidden
     display: none
-  .song
-    padding: 10px
-    .created_at
-      color: #333333
-      font-size: 14px
-    .title
-      color: #F44040
-      font-size: 42px
-      line-height: 20px
-    .versions
-      .first_version
-      .version_image,
-      .thumbnail
-        float: left
-      .description
-        float: left
-        clear: both
-      .version
-        float: left
-        clear: left
-        padding-left: 10px
-        .reveal
-          font-size: 12px
-        .content
+  .content
+    width: 950px
+    margin: auto
+  .songs
+    margin-left: 100px
+    width: 500px
+    float: left
+    .song
+      padding: 10px
+      float: left
+      clear: both
+      background-color: lightGrey
+      margin: 10px
+      -moz-border-radius: 2%
+      .created_at
+        color: #333333
+        font-size: 14px
+        margin-left: 10px
+      .title
+        color: #2E447C
+        font-size: 42px
+        line-height: 20px
+      .versions
+        margin-left: 10px
+        .version_image,
+        .thumbnail
+          float: left
+        .description,
+        .player
+          padding-bottom: 10px
+          float: left
+          clear: both
+          width: 400px
+          text-indent: 15px
+        .version
+          float: left
+          clear: left
           margin-left: 10px
+          margin-bottom: 10px
+          padding: 5px
+          background-color: silver
+          -moz-border-radius: 5px
+          .reveal
+            font-size: 12px
+          .content
+            margin-left: 10px
+            float: left
+            clear: both
+            width: 400px
+            text-indent: 15px
+  .sidebar
+    float: left
+    width: 200px
+    margin-top: 100px

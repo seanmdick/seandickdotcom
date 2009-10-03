@@ -4,3 +4,119 @@ Processing SongsController#index (for 0.0.0.0 at 2009-10-02 22:15:31) [GET]
   [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
 Rendering songs/index
 Completed in 4ms (View: 0, DB: 1) | 200 OK [http://test.host/songs]
+  [4;36;1mSong Create (0.7ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:23:12', 'Song 17942230', '2009-10-04 02:23:12')[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:23:58', 'Song 17938840', '2009-10-04 02:23:58')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-04 02:23:58', '2009-10-04 02:23:58', NULL, 'this is an original description 17938830', NULL)[0m
+  [4;36;1mSong Update (0.2ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:23:58' WHERE "id" = 1[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:24:45', 'Song 17942600', '2009-10-04 02:24:45')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:24:45', '2009-10-04 02:24:45', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.2ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:24:45' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:24:45', '2009-10-04 02:24:45', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:24:45' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:24:45', '2009-10-04 02:24:45', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:24:45' WHERE "id" = 1[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:25:18', 'Song 17942600', '2009-10-04 02:25:18')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:25:18', '2009-10-04 02:25:18', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.2ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:25:18' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:25:18', '2009-10-04 02:25:18', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:25:18' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:25:18', '2009-10-04 02:25:18', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:25:18' WHERE "id" = 1[0m
+  [4;36;1mSong Create (1.0ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:25:35', 'Song 17942600', '2009-10-04 02:25:35')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:25:35', '2009-10-04 02:25:35', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.2ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:25:35' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:25:35', '2009-10-04 02:25:35', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:25:35' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:25:35', '2009-10-04 02:25:35', NULL, 'this is an original description 17942590', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:25:35' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Load (0.2ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSong Create (0.5ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:26:13', 'Song 17941920', '2009-10-04 02:26:13')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:26:13', '2009-10-04 02:26:13', NULL, 'this is an original description 17941910', NULL)[0m
+  [4;36;1mSong Update (0.2ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:26:13' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:26:13', '2009-10-04 02:26:13', NULL, 'this is an original description 17941910', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:26:13' WHERE "id" = 1[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:26:13', '2009-10-04 02:26:13', NULL, 'this is an original description 17941910', NULL)[0m
+  [4;36;1mSong Update (0.1ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2009-10-04 02:26:13' WHERE "id" = 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:26:47', 'Song 17942180', '2009-10-04 02:26:47')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:26:47', '2009-10-04 02:26:47', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:26:47', '2009-10-04 02:26:47', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:26:47', '2009-10-04 02:26:47', NULL, NULL, 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Create (0.5ms)[0m   [0mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:26:47', 'Song 17942180', '2009-10-04 02:26:47')[0m
+  [4;36;1mSongVersion Create (0.2ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:26:47', '2009-10-04 02:26:47', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:26:47', '2009-10-04 02:26:47', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.2ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:26:47', '2009-10-04 02:26:47', NULL, NULL, 1)[0m
+  [4;35;1mSong Create (0.1ms)[0m   [0mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:26:47', 'Song 17942180', '2009-10-04 02:26:47')[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:26:47', '2009-10-04 02:26:47', NULL, 'this is an original description 17942170', NULL)[0m
+  [4;35;1mSong Update (0.2ms)[0m   [0mUPDATE "songs" SET "updated_at" = '2009-10-04 02:26:47' WHERE "id" = 2[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:26:47', '2009-10-04 02:26:47', NULL, 'this is an original description 17942170', NULL)[0m
+  [4;35;1mSong Update (0.1ms)[0m   [0mUPDATE "songs" SET "updated_at" = '2009-10-04 02:26:47' WHERE "id" = 2[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:26:47', '2009-10-04 02:26:47', NULL, 'this is an original description 17942170', NULL)[0m
+  [4;35;1mSong Update (0.1ms)[0m   [0mUPDATE "songs" SET "updated_at" = '2009-10-04 02:26:47' WHERE "id" = 2[0m
+  [4;36;1mSongVersion Load (0.2ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 2) AND ("song_versions".song_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:27:00', 'Song 17942450', '2009-10-04 02:27:00')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:27:00', '2009-10-04 02:27:00', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:27:00', '2009-10-04 02:27:00', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:27:00', '2009-10-04 02:27:00', NULL, NULL, 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Create (0.6ms)[0m   [0mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:27:00', 'Song 17942450', '2009-10-04 02:27:00')[0m
+  [4;36;1mSongVersion Create (0.2ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:27:00', '2009-10-04 02:27:00', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:27:00', '2009-10-04 02:27:00', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:27:00', '2009-10-04 02:27:00', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:27:25', 'Song 17942450', '2009-10-04 02:27:25')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:27:25', '2009-10-04 02:27:25', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:27:25', '2009-10-04 02:27:25', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:27:25', '2009-10-04 02:27:25', NULL, NULL, 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Create (0.4ms)[0m   [0mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:27:25', 'Song 17942450', '2009-10-04 02:27:25')[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:27:25', '2009-10-04 02:27:25', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:27:25', '2009-10-04 02:27:25', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:27:25', '2009-10-04 02:27:25', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Load (0.6ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:27:56', 'Song 17942450', '2009-10-04 02:27:56')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:27:56', '2009-10-04 02:27:56', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:27:56', '2009-10-04 02:27:56', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:27:56', '2009-10-04 02:27:56', NULL, NULL, 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Create (0.4ms)[0m   [0mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:27:56', 'Song 17942450', '2009-10-04 02:27:56')[0m
+  [4;36;1mSongVersion Create (0.2ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:27:56', '2009-10-04 02:27:56', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:27:56', '2009-10-04 02:27:56', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.4ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:27:56', '2009-10-04 02:27:56', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at ASC LIMIT 1[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:29:00', 'Song 17942550', '2009-10-04 02:29:00')[0m
+  [4;35;1mSongVersion Create (0.3ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:29:00', '2009-10-04 02:29:00', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:29:00', '2009-10-04 02:29:00', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:29:00', '2009-10-04 02:29:00', NULL, NULL, 1)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Create (0.5ms)[0m   [0mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:29:00', 'Song 17942550', '2009-10-04 02:29:00')[0m
+  [4;36;1mSongVersion Create (0.2ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:29:00', '2009-10-04 02:29:00', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:29:00', '2009-10-04 02:29:00', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:29:00', '2009-10-04 02:29:00', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at ASC LIMIT 1[0m
+  [4;36;1mSong Create (0.5ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:29:25', 'Song 17942550', '2009-10-04 02:29:25')[0m
+  [4;35;1mSongVersion Create (0.3ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:29:25', '2009-10-04 02:29:25', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:29:25', '2009-10-04 02:29:25', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:29:25', '2009-10-04 02:29:25', NULL, NULL, 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Create (0.5ms)[0m   [0mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-04 02:29:25', 'Song 17942550', '2009-10-04 02:29:25')[0m
+  [4;36;1mSongVersion Create (0.2ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2008-10-04 02:29:25', '2009-10-04 02:29:25', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-09-04 02:29:25', '2009-10-04 02:29:25', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 02:29:25', '2009-10-04 02:29:25', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at ASC LIMIT 1[0m
+  [4;36;1mSong Create (0.9ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2010-03-10 16:58:29', 'Song 20579770', '2010-03-10 16:58:29')[0m
+  [4;35;1mSongVersion Create (0.3ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-03-10 16:58:29', '2010-03-10 16:58:29', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.2ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2010-02-10 16:58:29', '2010-03-10 16:58:29', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2010-03-09 16:58:29', '2010-03-10 16:58:29', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Load (1.1ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) ORDER BY created_at DESC[0m
+  [4;35;1mSongVersion Load (0.8ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at ASC LIMIT 1[0m
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2010-03-10 16:59:02', 'Song 20579750', '2010-03-10 16:59:02')[0m
+  [4;35;1mSongVersion Create (0.3ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-03-10 16:59:02', '2010-03-10 16:59:03', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Create (0.1ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2010-02-10 16:59:03', '2010-03-10 16:59:03', NULL, NULL, 1)[0m
+  [4;35;1mSongVersion Create (0.1ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2010-03-09 16:59:03', '2010-03-10 16:59:03', NULL, NULL, 1)[0m
+  [4;36;1mSongVersion Load (0.6ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) ORDER BY created_at DESC[0m
+  [4;35;1mSongVersion Load (0.3ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) AND ("song_versions".song_id = 1) ORDER BY created_at ASC LIMIT 1[0m
+  [4;36;1mSong Create (0.7ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2010-03-10 17:01:46', 'Song 20580690', '2010-03-10 17:01:46')[0m
+  [4;35;1mSongVersion Create (0.2ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2010-03-10 17:01:46', '2010-03-10 17:01:46', NULL, 'this is an original description 20580670', NULL)[0m
+  [4;36;1mSong Update (0.2ms)[0m   [0;1mUPDATE "songs" SET "updated_at" = '2010-03-10 17:01:46' WHERE "id" = 1[0m

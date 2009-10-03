@@ -1,13 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe SongVersion do
-  before(:each) do
-    @valid_attributes = {
-      
-    }
-  end
-
-  it "should create a new instance given valid attributes" do
-    SongVersion.create!(@valid_attributes)
+  it "should belong to a song" do
+    song_version = Factory :song_version
+    song_version.song.should be_kind_of Song
   end
 end
