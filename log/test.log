@@ -1,0 +1,6 @@
+
+
+Processing SongsController#index (for 0.0.0.0 at 2009-10-02 22:15:31) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+Completed in 4ms (View: 0, DB: 1) | 200 OK [http://test.host/songs]

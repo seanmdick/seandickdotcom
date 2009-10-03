@@ -1,0 +1,2449 @@
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSongs (20091003044712)
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSongs (20091003044712)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "title" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091003044712')[0m
+Migrating to CreateSongVersions (20091003045039)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "song_versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "song_id" integer, "description" text, "url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091003045039')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("song_versions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("songs")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "song_versions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "song_id" integer, "description" text, "url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "title" varchar(255)) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20091003045039')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20091003044712')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-02 22:06:48) [GET]
+
+ActionController::RoutingError (No route matches "/songs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:08:45) [GET]
+
+ActionView::MissingTemplate (Missing template songs/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:09:28) [GET]
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:3: syntax error, unexpected kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("", 0, false);haml_temp = @versions.shift do |first_version|;
+_hamlout.push_text("<em class='title'>#{_hamlout.adjust_tabs(1); haml_temp = first_version.title
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</em>\n", 0, false);end;_erbout << _hamlout.format_script_false_false_false_false_false_false_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));_hamlout.push_text("\n#{haml_temp = end
+_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:7:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:3: syntax error, unexpected kEND) on line #3 of app/views/songs/index.html.haml:
+1: =@versions.shift do |first_version|
+2:   %em.title=first_version.title
+3: =end
+
+    app/views/songs/index.html.haml:7:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:13:12) [GET]
+  [4;36;1mSong Load (0.8ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:5: syntax error, unexpected kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kEND
+...push_text("\n#{haml_temp = end if @songs
+                              ^
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("", 0, false);haml_temp = @songs.each do |song|;
+_hamlout.push_text("<em class='title'>#{_hamlout.adjust_tabs(1); haml_temp = song.title
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</em>\n", 0, false);haml_temp = song.versions.shift do |first_version|;
+_hamlout.push_text("<div class='description'>#{_hamlout.adjust_tabs(1); haml_temp = first_version.description
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</div>\n", 0, false);end;_erbout << _hamlout.format_script_false_false_false_false_false_false_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));_hamlout.push_text("\n#{haml_temp = end
+_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);end;_erbout << _hamlout.format_script_false_false_false_false_false_false_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));_hamlout.push_text("\n#{haml_temp = end if @songs
+_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:10:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:5: syntax error, unexpected kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kEND
+...push_text("\n#{haml_temp = end if @songs
+                              ^) on line #5 of app/views/songs/index.html.haml:
+2:   %em.title=song.title
+3:   =song.versions.shift do |first_version|
+4:     .description=first_version.description
+5:   =end
+6: =end if @songs
+
+    app/views/songs/index.html.haml:10:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:15:41) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+Completed in 77ms (View: 72, DB: 0) | 200 OK [http://localhost/songs]
+  [4;36;1mSong Create (0.6ms)[0m   [0;1mINSERT INTO "songs" ("created_at", "title", "updated_at") VALUES('2009-10-03 05:16:24', 'test song', '2009-10-03 05:16:24')[0m
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:16:28) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #3 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   %em.title=song.title
+3:   -song.versions.shift do |first_version|
+4:     .description=first_version.description
+
+    app/views/songs/index.html.haml:3:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:1:in `each'
+    app/views/songs/index.html.haml:1:in `_run_haml_app47views47songs47index46html46haml'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (50.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:16:50) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #3 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   %em.title="#{song.title}"
+3:   -song.versions.shift do |first_version|
+4:     .description=first_version.description
+
+    app/views/songs/index.html.haml:3:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:1:in `each'
+    app/views/songs/index.html.haml:1:in `_run_haml_app47views47songs47index46html46haml'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (123.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:17:24) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #3 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   %em.title= "#{song.title}"
+3:   -song.versions.shift do |first_version|
+4:     .description= first_version.description
+
+    app/views/songs/index.html.haml:3:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:1:in `each'
+    app/views/songs/index.html.haml:1:in `_run_haml_app47views47songs47index46html46haml'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (54.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:18:09) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #3 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   %em.title= "#{song.title}"
+3:   -song.versions.shift do |first_version|
+4:     .description= first_version.description
+
+    app/views/songs/index.html.haml:3:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:1:in `each'
+    app/views/songs/index.html.haml:1:in `_run_haml_app47views47songs47index46html46haml'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (120.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:19:09) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+_hamlout.push_text("<em class='title'>#{_hamlout.adjust_tabs(1); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</em>\n", 0, false);haml_temp =  first_version = song.versions.shift;
+_hamlout.push_text("<div class='description'>#{_hamlout.adjust_tabs(1); haml_temp = first_version.description
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</div>\n", 0, false);end;_erbout << _hamlout.format_script_false_false_false_false_false_false_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));_hamlout.push_text("\n", 0, false);end;@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting $end) on line #6 of app/views/songs/index.html.haml:
+3:   = first_version = song.versions.shift
+4:     .description= first_version.description
+
+    app/views/songs/index.html.haml:6:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:20:18) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #3 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   %em.title= "#{song.title}"
+3:   = song.versions.shift do |first_version|
+4:     .description= first_version.description
+
+    app/views/songs/index.html.haml:3:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:1:in `each'
+    app/views/songs/index.html.haml:1:in `_run_haml_app47views47songs47index46html46haml'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (123.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:20:27) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:20:33) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected '}', expecting kEND
+...temp = nil; haml_very_temp));}\n<!-- .description= first_ver...
+                              ^
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected '.'
+...il; haml_very_temp));}\n<!-- .description= first_version.des...
+                              ^
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected '>'
+... first_version.description -->\n", 0, false);end;@haml_buffe...
+                              ^
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: unterminated string meets end of file
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+_hamlout.push_text("<em class='title'>#{_hamlout.adjust_tabs(1); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</em>\n#{haml_temp =  song.versions.shift do |first_version|
+_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n<!-- .description= first_version.description -->\n", 0, false);end;@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected '}', expecting kEND
+...temp = nil; haml_very_temp));}\n<!-- .description= first_ver...
+                              ^
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected '.'
+...il; haml_very_temp));}\n<!-- .description= first_version.des...
+                              ^
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected '>'
+... first_version.description -->\n", 0, false);end;@haml_buffe...
+                              ^
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: unterminated string meets end of file
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:4: syntax error, unexpected $end, expecting kEND) on line #4 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   %em.title= "#{song.title}"
+3:   = song.versions.shift do |first_version|
+4:   /   .description= first_version.description
+
+    app/views/songs/index.html.haml:4:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:20:39) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:5: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:7: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+_hamlout.push_text("<em class='title'>#{_hamlout.adjust_tabs(1); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</em>\n", 0, false); song.versions.shift do |first_version|;
+_hamlout.push_text("<!-- .description= first_version.description -->\n", 0, false);end;@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:7:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:5: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:7: syntax error, unexpected $end, expecting kEND) on line #5 of app/views/songs/index.html.haml:
+2:   %em.title= "#{song.title}"
+3:   - song.versions.shift do |first_version|
+4:   /   .description= first_version.description
+
+    app/views/songs/index.html.haml:7:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (114.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:20:52) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+_hamlout.push_text("<em class='title'>#{_hamlout.adjust_tabs(1); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</em>\n", 0, false); song.versions.shift do |first_version|;
+
+_hamlout.push_text("<!-- .description= first_version.description -->\n", 0, false);end;_hamlout.push_text("<div class='footer'></div>\n", 0, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND) on line #6 of app/views/songs/index.html.haml:
+3:   - song.versions.shift do |first_version|
+4:   /   .description= first_version.description
+5: .footer
+
+    app/views/songs/index.html.haml:8:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:21:16) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+
+_hamlout.push_text("<div class='song'>\n  <em class='title'>#{_hamlout.adjust_tabs(2); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</em>\n", 0, false); song.versions.shift do |first_version|;
+_hamlout.push_text("</div>\n", -1, false);end;_hamlout.push_text("<div class='footer'></div>\n", 0, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND) on line #6 of app/views/songs/index.html.haml:
+3:     %em.title= "#{song.title}"
+4:     - song.versions.shift do |first_version|  
+5: .footer
+
+    app/views/songs/index.html.haml:8:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:21:41) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+
+_hamlout.push_text("<div class='song'>\n  <h1 class='title'>#{_hamlout.adjust_tabs(2); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</h1>\n", 0, false); song.versions.shift do |first_version|;
+_hamlout.push_text("</div>\n", -1, false);end;_hamlout.push_text("<div class='footer'></div>\n", 0, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND) on line #6 of app/views/songs/index.html.haml:
+3:     %h1.title= "#{song.title}"
+4:     - song.versions.shift do |first_version|  
+5: .footer
+
+    app/views/songs/index.html.haml:8:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:22:33) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+
+_hamlout.push_text("<div class='song'>\n  <h1 class='title'>#{_hamlout.adjust_tabs(2); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</h1>\n</div>\n", -1, false);song.versions.shift do |first_version|;
+end;_hamlout.push_text("<div class='footer'></div>\n", 0, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND) on line #6 of app/views/songs/index.html.haml:
+3:     %h1.title= "#{song.title}"
+4:   -song.versions.shift do |first_version|  
+5: .footer
+
+    app/views/songs/index.html.haml:8:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:22:38) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:encoding=>nil, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :format=>:xhtml, :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;@songs.each do |song|;
+
+_hamlout.push_text("<div class='song'>\n  <h1 class='title'>#{_hamlout.adjust_tabs(2); haml_temp = "#{song.title}"
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</h1>\n</div>\n", -1, false);end;song.versions.shift do |first_version|;
+_hamlout.push_text("<div class='footer'></div>\n", 0, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-2.2.3/lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:6: syntax error, unexpected kENSURE, expecting kEND
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:8: syntax error, unexpected $end, expecting kEND) on line #6 of app/views/songs/index.html.haml:
+3:     %h1.title= "#{song.title}"
+4: -song.versions.shift do |first_version|  
+5: .footer
+
+    app/views/songs/index.html.haml:8:in `compile!'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (116.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:23:09) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #4 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   .song
+3:     %h1.title= "#{song.title}"
+4:   - first_version = song.versions.shift
+5: .footer
+
+    app/views/songs/index.html.haml:4:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:1:in `each'
+    app/views/songs/index.html.haml:1:in `_run_haml_app47views47songs47index46html46haml'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (50.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:23:29) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #4 of app/views/songs/index.html.haml:
+1: -@songs.each do |song|
+2:   .song
+3:     %h1.title= "#{song.title}"
+4:   - first_version = song.versions.shift unless song.versions.blank?
+5: .footer
+
+    app/views/songs/index.html.haml:4:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:1:in `each'
+    app/views/songs/index.html.haml:1:in `_run_haml_app47views47songs47index46html46haml'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (127.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:24:36) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (You don't need to use "- end" in Haml. Use indentation instead:
+- if foo?
+  %strong Foo!
+- else
+  Not foo.) on line #6 of app/views/songs/index.html.haml:
+3:     %h1.title= "#{song.title}"
+4:   - first_version = song.versions.shift unless song.versions.blank?
+5:   
+6: -end
+7: .footer
+
+    app/views/songs/index.html.haml:6
+    haml (2.2.3) lib/haml/precompiler.rb:219:in `process_line'
+    haml (2.2.3) lib/haml/precompiler.rb:168:in `precompile'
+    haml (2.2.3) lib/haml/engine.rb:112:in `initialize'
+    haml (2.2.3) lib/haml/template/plugin.rb:21:in `new'
+    haml (2.2.3) lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (49.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:28:52) [GET]
+  [4;36;1mSong Load (1.1ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (Indenting at the beginning of the document is illegal.) on line #1 of app/views/songs/index.html.haml:
+1:   -@songs.each do |song|
+2:     .song
+3:       %h1.title= song.title
+4:     - song.versions.shift do |first_version|
+
+    app/views/songs/index.html.haml:1
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:156:in `precompile'
+    vendor/plugins/haml/rails/./lib/haml/engine.rb:114:in `initialize'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `new'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `compile'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:29:07) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #5 of app/views/songs/index.html.haml:
+2:   -@songs.each do |song|
+3:     .song
+4:       %h1.title= song.title
+5:     - song.versions.shift do |first_version|
+6:       %span.description= first_version.description
+7: .footer
+
+    app/views/songs/index.html.haml:5:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (127.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:34:23) [GET]
+  [4;36;1mSong Load (1.1ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #5 of app/views/songs/index.html.haml:
+2:   -@songs.each do |song|
+3:     .song
+4:       %h1.title= song.title
+5:     - song.versions.shift do |first_version|
+6:       %span.description= first_version.description
+7: .footer
+
+    app/views/songs/index.html.haml:5:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (52.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:36:18) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #6 of app/views/songs/index.html.haml:
+3:     .song
+4:       %h1.title= song.title
+5:       .versions
+6:       - song.versions.shift do |first_version|
+7:         .first_version
+8:           %span.description= first_version.description
+9: .footer
+
+    app/views/songs/index.html.haml:6:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (126.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:36:33) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #6 of app/views/songs/index.html.haml:
+3:     .song
+4:       %h1.title= song.title
+5:       .versions
+6:         - song.versions.shift do |first_version|
+7:           .first_version
+8:             %span.description
+9:               = first_version.description
+
+    app/views/songs/index.html.haml:6:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (51.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:36:42) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #6 of app/views/songs/index.html.haml:
+3:     .song
+4:       %h1.title = song.title
+5:       .versions
+6:         - song.versions.shift do |first_version|
+7:           .first_version
+8:             %span.description
+9:               = first_version.description
+
+    app/views/songs/index.html.haml:6:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (124.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:38:08) [GET]
+  [4;36;1mSong Load (1.0ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `song_versions' for #<Class:0x267b1bc>) on line #6 of app/views/songs/index.html.haml:
+3:     .song
+4:       %h1.title = song.title
+5:       .versions
+6:         - song.versions.shift do |first_version|
+7:           .first_version
+8:             %span.description
+9:               = first_version.description
+
+    app/views/songs/index.html.haml:6:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (51.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:38:27) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `song_version' for #<Class:0x23e3288>) on line #6 of app/views/songs/index.html.haml:
+3:     .song
+4:       %h1.title = song.title
+5:       .versions
+6:         - song.versions.shift do |first_version|
+7:           .first_version
+8:             %span.description
+9:               = first_version.description
+
+    app/views/songs/index.html.haml:6:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (124.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:38:55) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `song_version' for #<Class:0x25d20bc>) on line #6 of app/views/songs/index.html.haml:
+3:     .song
+4:       %h1.title = song.title
+5:       .versions
+6:         - song.versions.shift do |first_version|
+7:           .first_version
+8:             %span.description
+9:               = first_version.description
+
+    app/views/songs/index.html.haml:6:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:2:in `each'
+    app/views/songs/index.html.haml:2:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (50.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:39:44) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.2ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:40:05) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.2ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:40:12) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.2ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" LIMIT 1[0m
+  [4;36;1mSong Load (0.8ms)[0m   [0;1mSELECT * FROM "songs" LIMIT 1[0m
+  [4;35;1mSongVersion Create (0.6ms)[0m   [0mINSERT INTO "song_versions" ("created_at", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 05:40:31', '2009-10-03 05:40:31', NULL, 'here is a test description', 1)[0m
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:40:33) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:40:35) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/songs]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" LIMIT 1[0m
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Load (0.4ms)[0m   [0mSELECT * FROM "songs" LIMIT 1[0m
+  [4;36;1mSongVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" LIMIT 1[0m
+  [4;36;1mSongVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:41:54) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+ERROR: compiling _run_haml_app47views47songs47index46html46haml RAISED compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:11: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_haml_app47views47songs47index46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:ugly=>false, :encoding=>nil, :format=>:xhtml, :preserve=>["textarea", "pre"], :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"]});_erbout = _hamlout.buffer;__in_erb_template = true;;
+_hamlout.push_text("<div class='header'>\n", 1, false);@songs.each do |song|;
+
+
+_hamlout.push_text("  <div class='song'>\n    <h1 class='title'>#{_hamlout.adjust_tabs(2); haml_temp = song.title
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</h1>\n    <div class='versions'>\n", 1, false); first_version = song.versions.shift;
+
+
+_hamlout.push_text("      <div class='first_version'>\n        <span class='description'>\n          #{_hamlout.adjust_tabs(2); haml_temp =  first_version.description
+_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n        </span>\n      </div>\n", -2, false);end;_hamlout.push_text("    </div>\n  </div>\n", -2, false);end;_hamlout.push_text("</div>\n<div class='footer'></div>\n", -1, false);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:11:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/Users/sean/workspace/seandick.com/vendor/plugins/haml/rails/../lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/Users/sean/workspace/seandick.com/vendor/plugins/haml/rails/../lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/sean/workspace/seandick.com/app/views/songs/index.html.haml:11: syntax error, unexpected kENSURE, expecting $end) on line #11 of app/views/songs/index.html.haml:
+8:             %span.description
+9:               = first_version.description
+10: .footer
+
+    app/views/songs/index.html.haml:11:in `compile!'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:42:19) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.3ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:54:45) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.3ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-02 22:54:45) [GET]
+
+ActionController::RoutingError (No route matches "/global.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:55:13) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:56:16) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.3ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:56:28) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 22:57:16) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.3ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSongs (20091003044712)
+Migrating to CreateSongVersions (20091003045039)
+Migrating to AddImageUrlToSongVersion (20091003055746)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSongs (20091003044712)
+Migrating to CreateSongVersions (20091003045039)
+Migrating to AddImageUrlToSongVersion (20091003055746)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "song_versions" ADD "image_url" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091003055746')[0m
+  [4;35;1mSQL (3.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("song_versions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("songs")[0m
+  [4;36;1mSong Load (1.1ms)[0m   [0;1mSELECT * FROM "songs" LIMIT 1[0m
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) LIMIT 1[0m
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" LIMIT 1[0m
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) LIMIT 1[0m
+  [4;36;1mSongVersion Update (1.0ms)[0m   [0;1mUPDATE "song_versions" SET "updated_at" = '2009-10-03 05:59:58', "image_url" = '/images/justthesame.png' WHERE "id" = 1[0m
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:01:10) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.3ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:01:32) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:01:52) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 162ms (View: 154, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:01:56) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.3ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:03:14) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (undefined method `abs' for Fri Oct 02 22:16:24 -0700 2009:Time) on line #8 of app/views/songs/index.html.haml:
+5:     .song
+6:       %h1.title= song.title
+7:       %em.created_at= time_ago_in_words(Time.now - song.created_at)
+8:       .versions
+9:         - first_version = song.versions.shift
+10:         .first_version
+11:           %img{ :src => first_version.image_url, :class => "version_image" }
+
+    app/views/songs/index.html.haml:8:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:4:in `each'
+    app/views/songs/index.html.haml:4:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:03:25) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (can't convert Date into Float) on line #8 of app/views/songs/index.html.haml:
+5:     .song
+6:       %h1.title= song.title
+7:       %em.created_at= time_ago_in_words(Time.now - song.created_at.to_date)
+8:       .versions
+9:         - first_version = song.versions.shift
+10:         .first_version
+11:           %img{ :src => first_version.image_url, :class => "version_image" }
+
+    app/views/songs/index.html.haml:8:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:4:in `each'
+    app/views/songs/index.html.haml:4:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:03:36) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (undefined method `abs' for Fri Oct 02 22:16:24 -0700 2009:Time) on line #8 of app/views/songs/index.html.haml:
+5:     .song
+6:       %h1.title= song.title
+7:       %em.created_at= time_ago_in_words(Time.now - song.created_at)
+8:       .versions
+9:         - first_version = song.versions.shift
+10:         .first_version
+11:           %img{ :src => first_version.image_url, :class => "version_image" }
+
+    app/views/songs/index.html.haml:8:in `_run_haml_app47views47songs47index46html46haml'
+    app/views/songs/index.html.haml:4:in `each'
+    app/views/songs/index.html.haml:4:in `_run_haml_app47views47songs47index46html46haml'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:04:07) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:07:37) [GET]
+  [4;36;1mSong Load (1.2ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 18ms (View: 11, DB: 2) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:07:50) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:08:16) [GET]
+  [4;36;1mSong Load (1.2ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 21ms (View: 13, DB: 2) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:08:20) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:08:24) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:09:51) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:10:35) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:10:46) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:11:30) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:11:36) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:11:56) [GET]
+  [4;36;1mSong Load (1.0ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:12:14) [GET]
+  [4;36;1mSong Load (0.7ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:12:21) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:13:59) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:14:11) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:14:22) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:15:08) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:15:24) [GET]
+  [4;36;1mSong Load (0.9ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:15:31) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:15:36) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:15:40) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:16:44) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:16:51) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.6ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:17:00) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.6ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:17:39) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:18:45) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/songs]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" LIMIT 1[0m
+  [4;36;1mSongVersion Create (0.9ms)[0m   [0;1mINSERT INTO "song_versions" ("created_at", "image_url", "updated_at", "url", "description", "song_id") VALUES('2009-10-03 06:19:29', '/images/rails.png', '2009-10-03 06:19:29', NULL, 'here is a second version that sucks more', 1)[0m
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:19:31) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:21:21) [GET]
+  [4;36;1mSong Load (0.7ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:21:41) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:21:54) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:22:05) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:22:40) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.8ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:23:32) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:23:44) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.4ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:23:47) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.6ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:27:39) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 87ms (View: 81, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:28:48) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:29:51) [GET]
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-02 23:29:51) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery-1-3-2.min.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:30:23) [GET]
+  [4;36;1mSong Load (0.8ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;35;1mSongVersion Load (0.5ms)[0m   [0mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:30:33) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (Illegal nesting: content can't be both given on the same line as %span and nested within it.) on line #22 of app/views/songs/index.html.haml:
+19:         -song.versions.each do |version|
+20:           .version
+21:             %span.reveal= version.created_at.strftime(" %b %d, %y")
+22:               .content.hidden
+23:                 %img{ :src => version.image_url, :class => "version_image" }
+24:                 %span.description
+25:                   = version.description
+
+    app/views/songs/index.html.haml:22
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:701:in `render_tag'
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:204:in `process_line'
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:168:in `precompile'
+    vendor/plugins/haml/rails/./lib/haml/engine.rb:114:in `initialize'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `new'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `compile'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (121.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:31:26) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (Illegal nesting: content can't be both given on the same line as %span and nested within it.) on line #22 of app/views/songs/index.html.haml:
+19:         -song.versions.each do |version|
+20:           .version
+21:             %span.reveal= version.created_at.strftime(" %b %d, %y")
+22:               .content.hidden
+23:                 %img{ :src => version.image_url, :class => "version_image" }
+24:                 %span{ version.description, :class => "description" }
+25: .footer
+
+    app/views/songs/index.html.haml:22
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:701:in `render_tag'
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:204:in `process_line'
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:168:in `precompile'
+    vendor/plugins/haml/rails/./lib/haml/engine.rb:114:in `initialize'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `new'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `compile'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (48.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:31:46) [GET]
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT * FROM "songs" [0m
+Rendering songs/index
+
+ActionView::TemplateError (Illegal nesting: content can't be both given on the same line as %span and nested within it.) on line #22 of app/views/songs/index.html.haml:
+19:         -song.versions.each do |version|
+20:           .version
+21:             %span.reveal= version.created_at.strftime(" %b %d, %y")
+22:               .content.hidden
+23:                 %img{ :src => version.image_url, :class => "version_image" }
+24:                 %span.description= version.description
+25: .footer
+
+    app/views/songs/index.html.haml:22
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:701:in `render_tag'
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:204:in `process_line'
+    vendor/plugins/haml/rails/./lib/haml/precompiler.rb:168:in `precompile'
+    vendor/plugins/haml/rails/./lib/haml/engine.rb:114:in `initialize'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `new'
+    vendor/plugins/haml/rails/./lib/haml/template/plugin.rb:21:in `compile'
+    vendor/plugins/haml/rails/./lib/haml/helpers/action_view_mods.rb:13:in `render'
+    vendor/plugins/haml/rails/./lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (120.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:32:58) [GET]
+  [4;35;1mSong Load (0.8ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (1.0ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:33:23) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:34:13) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.6ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:34:28) [GET]
+  [4;35;1mSong Load (0.8ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:34:49) [GET]
+  [4;35;1mSong Load (0.7ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:35:27) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:35:56) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:36:20) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.6ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/songs]
+/!\ FAILSAFE /!\  Fri Oct 02 23:46:56 -0700 2009
+  Status: 500 Internal Server Error
+  /Users/sean/workspace/seandick.com/app/helpers/songs_helper.rb:6: syntax error, unexpected $end, expecting kEND
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:126:in `helper'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:120:in `helper'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/sean/workspace/seandick.com/app/controllers/application_controller.rb:5
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:47:25) [GET]
+  [4;35;1mSong Load (0.5ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:48:25) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.4ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:49:11) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/songs]
+
+
+Processing SongsController#index (for 127.0.0.1 at 2009-10-02 23:50:54) [GET]
+  [4;35;1mSong Load (0.6ms)[0m   [0mSELECT * FROM "songs" [0m
+Rendering songs/index
+  [4;36;1mSongVersion Load (0.5ms)[0m   [0;1mSELECT * FROM "song_versions" WHERE ("song_versions".song_id = 1) [0m
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/songs]

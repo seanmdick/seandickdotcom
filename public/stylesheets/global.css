@@ -1,0 +1,27 @@
+body {
+  font-family: "Helvetica Neue","HelveticaNeueLT Std","MgOpen Moderna",Helvetica,Arial,sans-serif; }
+  body .hidden {
+    display: none; }
+  body .song {
+    padding: 10px; }
+    body .song .created_at {
+      color: #333333;
+      font-size: 14px; }
+    body .song .title {
+      color: #F44040;
+      font-size: 42px;
+      line-height: 20px; }
+    body .song .versions .version_image,
+    body .song .versions .thumbnail {
+      float: left; }
+    body .song .versions .description {
+      float: left;
+      clear: both; }
+    body .song .versions .version {
+      float: left;
+      clear: left;
+      padding-left: 10px; }
+      body .song .versions .version .reveal {
+        font-size: 12px; }
+      body .song .versions .version .content {
+        margin-left: 10px; }
